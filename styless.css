@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #effafa;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.box-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #5ba4a4;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logo-style {
+  width: 48px;
+  transform: translate(-140px, 24px);
+}
+
+.company-name {
+  color: #5ca5a5;
+  font-family: League Spartan;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 11.96px;
+  text-align: left;
+}
+
+.developer-style {
+  font-family: League Spartan;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #2b3939;
+}
+
+.new-style {
+  color: white;
+  background-color: #5ca5a5;
+  border: none;
+  border-radius: 12px;
+  padding: 7px 8px;
+  font-family: League Spartan;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.10769230872392654px;
+  text-align: center;
+}
+
+.featured-style {
+  color: #ffffff;
+  background-color: #2b3939;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 8px;
+  font-family: League Spartan;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.10769230872392654px;
+  text-align: left;
+}
+
+.info-style {
+  font-family: League Spartan;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.1230769231915474px;
+  text-align: left;
+  color: #7c8f8f;
+}
+
+.job-card-section {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 8px;
+  font-family: League Spartan;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.1230769231915474px;
+  text-align: left;
+  color: #5ca5a5;
+}
+
+#front-end-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#senior-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#html-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#css-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#javascript-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}

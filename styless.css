@@ -141,3 +141,91 @@ main {
   justify-content: center;
   border-radius: 4px;
 }
+
+#fullstack-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#midweight-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#python-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#react-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#junior-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#sass-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#ruby-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#backend-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#ror-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#vue-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+#django-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+}

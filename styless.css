@@ -17,6 +17,14 @@ main {
   overflow: hidden;
 }
 
+.combined-style {
+  display: block;
+}
+
+.combined-style-desktop {
+  display: none;
+}
+
 .box-container {
   background-color: white;
   padding: 30px;
@@ -26,11 +34,23 @@ main {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  cursor: pointer;
 }
 
 .logo-style {
   width: 48px;
   transform: translate(-140px, 24px);
+  display: block;
+}
+
+.logo-desktop {
+  display: none;
+}
+
+.job-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .company-name {
@@ -87,6 +107,10 @@ main {
   letter-spacing: -0.1230769231915474px;
   text-align: left;
   color: #7c8f8f;
+}
+
+.rectangle-style {
+  display: block;
 }
 
 .job-card-section {
@@ -228,4 +252,46 @@ main {
   padding: 5px 10px;
   justify-content: center;
   border-radius: 4px;
+}
+
+@media (min-width: 1024px) {
+  main {
+    gap: 15px;
+  }
+
+  .combined-style {
+    display: none;
+  }
+
+  .combined-style-desktop {
+    display: block;
+  }
+  .box-container {
+    flex-direction: row;
+    align-items: center;
+    width: 1110px;
+    gap: 6px;
+  }
+  .logo-style {
+    display: none;
+  }
+
+  .logo-desktop {
+    display: block;
+  }
+
+  .rectangle-style {
+    display: none;
+  }
+
+  .job-header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .job-card-section {
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    margin-left: 244px;
+  }
 }

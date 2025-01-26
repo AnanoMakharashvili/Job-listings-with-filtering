@@ -10,6 +10,16 @@ body {
   background-color: #effafa;
 }
 
+#filter-input {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 51px;
+  width: 327px;
+  transform: translate(0px, -37px);
+  cursor: pointer;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -259,6 +269,17 @@ main {
     gap: 15px;
   }
 
+  #filter-input {
+    width: 1110px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .combined-style {
     display: none;
   }
@@ -268,9 +289,8 @@ main {
   }
   .box-container {
     flex-direction: row;
-    align-items: center;
-    width: 1110px;
     gap: 6px;
+    width: 1110px;
   }
   .logo-style {
     display: none;
@@ -291,7 +311,10 @@ main {
   }
 
   .job-card-section {
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    display: flex;
+    align-items: center;
     margin-left: 244px;
+    flex-direction: row;
+    gap: 36px;
   }
 }

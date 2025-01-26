@@ -16,6 +16,8 @@ const jobVue = document.getElementById("vue-style");
 const jobDjango = document.getElementById("django-style");
 const jobInput = document.getElementById("filter-input");
 const allJobs = document.querySelectorAll(".job");
+const jobBox = document.querySelectorAll(".box-container");
+const jobLogo = document.querySelectorAll(".logo-style");
 
 jobInput.addEventListener("input", function () {
   const filterValue = jobInput.value.toLowerCase();
@@ -27,6 +29,30 @@ jobInput.addEventListener("input", function () {
       job.style.display = "block";
     } else {
       job.style.display = "none";
+    }
+  });
+});
+
+jobInput.addEventListener("input", function () {
+  const filterValue = jobInput.value.trim().toLowerCase();
+
+  jobBox.forEach((box) => {
+    const jobText = box.textContent.trim().toLowerCase();
+
+    if (jobText.includes(filterValue)) {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  });
+
+  jobLogo.forEach((logo) => {
+    const logoText = logo.textContent.trim().toLowerCase();
+
+    if (logoText.includes(filterValue)) {
+      logo.style.display = "block";
+    } else {
+      logo.style.display = "none";
     }
   });
 });

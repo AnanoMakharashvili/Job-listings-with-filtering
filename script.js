@@ -8,7 +8,6 @@ fetch("./data.json")
   .then((data) => {
     const jobsSection = document.getElementById("box-container");
     const filterSection = document.getElementById("filter-tag");
-    const jobInfoContainer = document.getElementById("job-filter");
 
     let filterArr = [];
 
@@ -27,11 +26,11 @@ fetch("./data.json")
         removeBtn.src = "assets/x.png";
         removeBtn.alt = "delete";
         removeBtn.className = "filter-btn";
-        removeBtn.style.backgroundColor = "#5ca5a5;";
+        removeBtn.style.backgroundColor = "#5ca5a5";
         removeBtn.onclick = () => {
           filterArr = filterArr.filter((f) => f !== filter);
           renderFilters();
-          renderJobs(data);
+          renderJobs();
         };
 
         filterContainer.appendChild(filterTag);
@@ -40,25 +39,32 @@ fetch("./data.json")
       });
     }
 
-    // Function to render jobs dynamically
-    function renderJobs(jobs) {
-      jobsSection.innerHTML = ""; // Clear previous content
-      jobs.forEach((job) => {
-        // Create job card
+    function renderJobs() {
+      jobsSection.innerHTML = "";
+
+      const filteredJobs = data.filter((job) => {
+        if (filterArr.length === 0) return true;
+        const jobFilters = [
+          job.role,
+          job.level,
+          ...job.languages,
+          ...job.tools,
+        ];
+        return filterArr.every((filter) => jobFilters.includes(filter));
+      });
+
+      filteredJobs.forEach((job) => {
         const jobCard = document.createElement("div");
         jobCard.className = "job-section";
 
-        // Company logo
         const logo = document.createElement("img");
         logo.src = job.logo;
         logo.alt = `${job.company} logo`;
         logo.className = "job-logo";
 
-        // Job info container
         const jobInfo = document.createElement("div");
         jobInfo.className = "job-info";
 
-        // Company name, new/featured badges
         const companyDetails = document.createElement("div");
         companyDetails.className = "company-details";
         companyDetails.innerHTML = `
@@ -71,7 +77,6 @@ fetch("./data.json")
           }
         `;
 
-        // Position, posted time, contract, and location
         const jobMeta = document.createElement("div");
         jobMeta.className = "job-meta";
         jobMeta.innerHTML = `
@@ -81,7 +86,6 @@ fetch("./data.json")
           </p>
         `;
 
-        // Filters (role, level, languages, tools)
         const filters = document.createElement("div");
         filters.className = "job-filters";
 
@@ -97,33 +101,28 @@ fetch("./data.json")
           filterBtn.className = "job-title-container";
           filterBtn.innerText = filter;
 
-          // Add event listener to add the filter to filterArr
           filterBtn.onclick = () => {
             if (!filterArr.includes(filter)) {
-              filterArr.push(filter); // Add filter to array
-              renderFilters(); // Re-render filters
-              renderJobs(data); // Re-render jobs
+              filterArr.push(filter);
+              renderFilters();
+              renderJobs();
             }
           };
 
           filters.appendChild(filterBtn);
         });
 
-        // Append all sections to the job card
         jobInfo.appendChild(companyDetails);
         jobInfo.appendChild(jobMeta);
         jobInfo.appendChild(filters);
-
         jobCard.appendChild(logo);
         jobCard.appendChild(jobInfo);
 
-        // Append job card to the jobs section
         jobsSection.appendChild(jobCard);
       });
     }
 
-    // Initial rendering of jobs
-    renderJobs(data);
+    renderJobs();
   })
   .catch((error) => {
     console.error("There was a problem with the fetch operation:", error);

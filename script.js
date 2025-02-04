@@ -10,58 +10,30 @@ fetch("./data.json")
     const filterSection = document.getElementById("filter-tag");
     const jobInfoContainer = document.getElementById("job-filter");
 
-    let filterArr = []; // Array to store selected filters
+    let filterArr = [];
 
-    // Function to render filters dynamically at the top of the page
-    // function renderFilters() {
-    //   filterSection.innerHTML = ""; // Clear the previous filters
-    //   filterArr.forEach((filter) => {
-    //     const filterTag = document.createElement("span");
-    //     filterTag.className = "filter-tag";
-    //     filterTag.innerText = filter;
-
-    //     // Add remove button for filters
-    //     const removeBtn = document.createElement("filter-btn");
-    //     removeBtn.className = "remove-btn";
-    //     removeBtn.innerText = "×";
-    //     removeBtn.onclick = () => {
-    //       // Remove filter from array
-    //       filterArr = filterArr.filter((f) => f !== filter);
-    //       renderFilters(); // Re-render filters
-    //       renderJobs(data); // Re-render jobs
-    //     };
-
-    //     filterTag.appendChild(removeBtn);
-    //     filterSection.appendChild(filterTag);
-    //   });
-    // }
     function renderFilters() {
-      filterSection.innerHTML = ""; // გასუფთავება ძველი ფილტრების
+      filterSection.innerHTML = "";
 
       filterArr.forEach((filter) => {
-        // ქმნის info-panel დივს
         const filterContainer = document.createElement("div");
         filterContainer.className = "info-panel";
 
-        // ქმნის span ელემენტს ფილტრის სახელით
         const filterTag = document.createElement("span");
         filterTag.className = "extra-section";
         filterTag.innerText = filter;
 
-        // ქმნის x ღილაკს წასაშლელად
         const removeBtn = document.createElement("img");
         removeBtn.src = "assets/x.png";
         removeBtn.alt = "delete";
         removeBtn.className = "filter-btn";
         removeBtn.style.backgroundColor = "#5ca5a5;";
         removeBtn.onclick = () => {
-          // შლის ფილტრს filterArr-დან
           filterArr = filterArr.filter((f) => f !== filter);
-          renderFilters(); // თავიდან გამოიძახებს ფილტრების რენდერს
-          renderJobs(data); // თავიდან გამოიძახებს სამუშაოების რენდერს
+          renderFilters();
+          renderJobs(data);
         };
 
-        // აერთიანებს ელემენტებს
         filterContainer.appendChild(filterTag);
         filterContainer.appendChild(removeBtn);
         filterSection.appendChild(filterContainer);

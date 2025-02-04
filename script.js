@@ -42,7 +42,7 @@ fetch("./data.json")
       jobs.forEach((job) => {
         // Create job card
         const jobCard = document.createElement("div");
-        jobCard.className = "box-container";
+        jobCard.className = "job-section";
 
         // Company logo
         const logo = document.createElement("img");

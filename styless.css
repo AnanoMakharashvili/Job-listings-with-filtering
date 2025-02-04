@@ -35,7 +35,7 @@ main {
   display: none;
 }
 
-.box-container {
+.job-section {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
@@ -45,6 +45,12 @@ main {
   flex-direction: column;
   gap: 15px;
   cursor: pointer;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 /* 
 .logo-style {
@@ -194,6 +200,12 @@ main {
   }
 
   .box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .job-section {
     display: flex;
     flex-direction: column;
     gap: 6px;

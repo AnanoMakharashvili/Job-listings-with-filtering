@@ -15,9 +15,12 @@ body {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 20px 103px;
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   transform: translate(0px, -37px);
   cursor: pointer;
+  gap: 8px;
 }
 
 .info-panel {
@@ -253,6 +256,9 @@ main {
     width: 1110px;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
 
   .combined-style {

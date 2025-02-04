@@ -13,26 +13,58 @@ fetch("./data.json")
     let filterArr = []; // Array to store selected filters
 
     // Function to render filters dynamically at the top of the page
+    // function renderFilters() {
+    //   filterSection.innerHTML = ""; // Clear the previous filters
+    //   filterArr.forEach((filter) => {
+    //     const filterTag = document.createElement("span");
+    //     filterTag.className = "filter-tag";
+    //     filterTag.innerText = filter;
+
+    //     // Add remove button for filters
+    //     const removeBtn = document.createElement("filter-btn");
+    //     removeBtn.className = "remove-btn";
+    //     removeBtn.innerText = "×";
+    //     removeBtn.onclick = () => {
+    //       // Remove filter from array
+    //       filterArr = filterArr.filter((f) => f !== filter);
+    //       renderFilters(); // Re-render filters
+    //       renderJobs(data); // Re-render jobs
+    //     };
+
+    //     filterTag.appendChild(removeBtn);
+    //     filterSection.appendChild(filterTag);
+    //   });
+    // }
     function renderFilters() {
-      filterSection.innerHTML = ""; // Clear the previous filters
+      filterSection.innerHTML = ""; // გასუფთავება ძველი ფილტრების
+
       filterArr.forEach((filter) => {
+        // ქმნის info-panel დივს
+        const filterContainer = document.createElement("div");
+        filterContainer.className = "info-panel";
+
+        // ქმნის span ელემენტს ფილტრის სახელით
         const filterTag = document.createElement("span");
-        filterTag.className = "filter-tag";
+        filterTag.className = "extra-section";
         filterTag.innerText = filter;
 
-        // Add remove button for filters
-        const removeBtn = document.createElement("filter-btn");
-        removeBtn.className = "remove-btn";
-        removeBtn.innerText = "×";
+        // ქმნის x ღილაკს წასაშლელად
+        const removeBtn = document.createElement("img");
+        removeBtn.src = "assets/x.png";
+        removeBtn.alt = "delete";
+        removeBtn.className = "filter-btn";
+        removeBtn.style.backgroundColor = "#5ca5a5;";
         removeBtn.onclick = () => {
-          // Remove filter from array
+          // შლის ფილტრს filterArr-დან
           filterArr = filterArr.filter((f) => f !== filter);
-          renderFilters(); // Re-render filters
-          renderJobs(data); // Re-render jobs
+          renderFilters(); // თავიდან გამოიძახებს ფილტრების რენდერს
+          renderJobs(data); // თავიდან გამოიძახებს სამუშაოების რენდერს
         };
 
-        filterTag.appendChild(removeBtn);
-        filterSection.appendChild(filterTag);
+        // აერთიანებს ელემენტებს
+        filterContainer.appendChild(filterTag);
+        filterContainer.appendChild(removeBtn);
+        filterSection.appendChild(filterContainer);
       });
     }
 
@@ -90,7 +122,7 @@ fetch("./data.json")
 
         allFilters.forEach((filter) => {
           const filterBtn = document.createElement("button");
-          filterBtn.className = "filter-btn";
+          filterBtn.className = "job-title-container";
           filterBtn.innerText = filter;
 
           // Add event listener to add the filter to filterArr

@@ -14,10 +14,35 @@ body {
   background-color: #ffffff;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  padding: 51px;
-  width: 327px;
+  padding: 20px 103px;
+
   transform: translate(0px, -37px);
   cursor: pointer;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.extra-section {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: League Spartan;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.1230769231915474px;
+  text-align: left;
+  color: #5ca5a5;
+}
+
+.filter-btn {
+  background-color: #5ca5a5;
+  padding: 9px;
 }
 
 main {
@@ -139,7 +164,7 @@ main {
   display: block;
 }
 
-.job-card-section {
+.job-title-container {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   gap: 8px;
@@ -152,7 +177,7 @@ main {
   color: #5ca5a5;
 }
 
-.filter-btn {
+.job-title-container {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   gap: 8px;
@@ -164,22 +189,27 @@ main {
   text-align: left;
   color: #5ca5a5;
   border: none;
-}
-#front-end-style {
   background: #effafa;
   display: flex;
   padding: 5px 10px;
   justify-content: center;
   border-radius: 4px;
 }
+/* #front-end-style {
+  background: #effafa;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  border-radius: 4px;
+} */
 
-.filter-btn {
+/* .filter-btn {
   background: #effafa;
   display: flex;
   padding: 5px 10px;
   justify-content: center;
   border-radius: 4px;
-}
+} */
 
 .job-filters {
   display: grid;

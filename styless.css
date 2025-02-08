@@ -10,6 +10,11 @@ body {
   background-color: #effafa;
 }
 
+.job-logo {
+  width: 48px;
+  transform: translate(-3px, -51px);
+}
+
 .filter-tag {
   background-color: #ffffff;
   border: 1px solid #d1d5db;
@@ -82,7 +87,7 @@ main {
 .box-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 30px;
 }
 
 .logo-desktop {
@@ -206,6 +211,11 @@ main {
 @media (min-width: 1024px) {
   main {
     gap: 15px;
+  }
+
+  .job-logo {
+    width: 88px;
+    transform: translate(-3px, -11px);
   }
 
   .box-container {

@@ -66,16 +66,20 @@ fetch("./data.json")
         jobInfo.className = "job-info";
 
         const companyDetails = document.createElement("div");
-        companyDetails.className = "company-details";
+
+        companyDetails.className = `company-details 
+  ${job.new ? "new" : ""} 
+  ${job.featured ? "featured" : ""}`.trim();
+
         companyDetails.innerHTML = `
-          <h3 class="company-name">${job.company}</h3>
-          ${job.new ? `<span class="badge new-badge">NEW!</span>` : ""}
-          ${
-            job.featured
-              ? `<span class="badge featured-badge">FEATURED</span>`
-              : ""
-          }
-        `;
+  <h3 class="company-name">${job.company}</h3>
+  <div class="badges">
+    ${job.new ? `<span class="badge new-badge">NEW!</span>` : ""}
+    ${job.featured ? `<span class="badge featured-badge">FEATURED</span>` : ""}
+  </div>
+`;
+
+        document.body.appendChild(companyDetails);
 
         const jobMeta = document.createElement("div");
         jobMeta.className = "job-meta";

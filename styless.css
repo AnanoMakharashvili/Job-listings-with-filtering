@@ -16,6 +16,7 @@ body {
   border-radius: 8px;
   padding: 20px 103px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   transform: translate(0px, -37px);
@@ -68,11 +69,14 @@ main {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #5ba4a4;
+
   display: flex;
   flex-direction: column;
   gap: 15px;
   cursor: pointer;
+}
+.job-section:hover {
+  border-left: 5px solid #5ba4a4;
 }
 
 .box-container {
@@ -80,27 +84,21 @@ main {
   flex-direction: column;
   gap: 16px;
 }
-/* 
-.logo-style {
-  width: 48px;
-  transform: translate(-140px, 24px);
-  display: block;
-} */
 
 .logo-desktop {
   display: none;
 }
 
-/* .job-header-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-} */
-
 .job-info {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .badge {
@@ -178,19 +176,6 @@ main {
   letter-spacing: -0.1230769231915474px;
   text-align: left;
   color: #5ca5a5;
-}
-
-.job-title-container {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  gap: 8px;
-  font-family: League Spartan;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.1230769231915474px;
-  text-align: left;
-  color: #5ca5a5;
   border: none;
   background: #effafa;
   display: flex;
@@ -198,21 +183,11 @@ main {
   justify-content: center;
   border-radius: 4px;
 }
-/* #front-end-style {
-  background: #effafa;
-  display: flex;
-  padding: 5px 10px;
-  justify-content: center;
-  border-radius: 4px;
-} */
 
-/* .filter-btn {
-  background: #effafa;
-  display: flex;
-  padding: 5px 10px;
-  justify-content: center;
-  border-radius: 4px;
-} */
+.job-title-container:hover {
+  background-color: #5ca5a5;
+  color: white;
+}
 
 .job-filters {
   display: grid;
@@ -225,6 +200,7 @@ main {
   letter-spacing: -0.1230769231915474px;
   text-align: left;
   color: #5ca5a5;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
@@ -247,16 +223,21 @@ main {
 
   .job-info {
     flex-direction: row;
+    gap: 8px;
   }
 
   .job-filters {
-    margin-left: 350px;
+    cursor: pointer;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    align-items: center;
+    margin-left: auto;
   }
   .filter-tag {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    flex-direction: row;
     gap: 14px;
   }
 
